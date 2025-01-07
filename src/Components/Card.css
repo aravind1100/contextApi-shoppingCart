@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.cardCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5em !important;
+}
+
+.card {
+  width: 38rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  font-size: 1.3rem;
+  border-radius: 3%;
+  border: 2px dotted gray;
+  box-shadow: 2px 5px;
+  background-image: radial-gradient(circle 341px at 10% 20%, rgba(132, 94, 194, 1) 0%, rgba(196, 243, 251, 1) 90%);
+}
+
+.card-body {
+  font-family: 'Playfair Display', serif;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+  height: 12rem;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  border-radius: 50px;
+}
+
+.card-img-top {
+  height: 20rem;
+  width: 100%;
+  padding: 1em;
+  object-fit: scale-down;
+  border: 2px solid black;
+  background: white;
+  border-radius: 5px;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.btn-success {
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-wrap: nowrap;
+  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  background-color: #ff8ea1;
+  border: 2px solid gray;
+}
+
+.list-group,
+.list-group-item {
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.list-group {
+  border-radius: 20px;
+}
+
+option {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: inherit;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+.form-select {
+  font-weight: bold;
+  font-size: 1.3rem;
+  background-color: bisque;
+  border-radius: 30px;
+}
+
+.form-label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Arial Narrow', Arial, sans-serif, 'Franklin Gothic Medium';
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,10 @@
+.footer {
+  margin-top: auto;
+  background-color: inherit; 
+}
+
+.footer p {
+  text-align: center;
+  color: #6c757d; 
+  font-size: 2rem ;
+}
