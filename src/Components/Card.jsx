@@ -47,7 +47,6 @@ const Card = () => {
           setCart((prevCart) =>
             prevCart.filter((item) => item.id !== product.id)
           );
-         
         };
 
         // Check if the product is already in the cart
@@ -68,75 +67,74 @@ const Card = () => {
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">{product.description}</p>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Price: ${price.toFixed(2)}</li>
+                  <li className="list-group-item">
+                    Price: ${price.toFixed(2)}
+                  </li>
                   <li className="list-group-item">
                     Category: {product.category.toUpperCase()}
                   </li>
                   <li className="list-group-item">
-                    Rating: {product.rating.rate} (
-                    {product.rating.count} reviews)
+                    Rating: {product.rating.rate} ({product.rating.count}{" "}
+                    reviews)
                   </li>
                 </ul>
-                </div>
-                <div className="card-footer d-flex justify-content-around align-items-center m-2">
-                  {!isInCart && (
-                    <>
-                      <label
-                        htmlFor={`quantity-select-${product.id}`}
-                        className="form-label"
-                      >
-                        Quantity
-                      </label>
-                      <select
-                        id={`quantity-select-${product.id}`}
-                        className="form-select w-25 border-5"
-                        value={isCustom ? "custom" : quantity} // Ensure the select shows the current value
-                        onChange={handleQuantityChange}
-                        aria-label="Select quantity"
-                      >
-                        {[1, 2, 3, 4, 5].map((num) => (
-                          <option key={num} value={num}>
-                            {num}
-                          </option>
-                        ))}
-                        <option value="custom">Custom</option>
-                      </select>
-
-                      {isCustom && (
-                       
-                        <input
-                          type="number"
-                          min="1"
-                          value={customQuantity}
-                          className="form-control w-20 "
-                          onChange={handleCustomQuantityChange}
-                          placeholder="Enter quantity"
-                        />
-                       
-                      )}
-                    </>
-                  )}
-
-                  {isInCart ? (
-                    <button
-                      className="btn btn-danger"
-                      onClick={handleRemoveFromCart}
+              </div>
+              <div className="card-footer d-flex flex-column justify-content-around align-items-center m-2">
+                {!isInCart && (
+                  <>
+                    <label
+                      htmlFor={`quantity-select-${product.id}`}
+                      className="form-label mb-2"
                     >
-                      Remove from Cart
-                    </button>
-                  ) : (
-                    <button
-                      className="btn btn-success"
-                      onClick={handleAddToCart}
-                      disabled={isCustom && customQuantity < 1} // Disable if custom quantity is invalid
+                      Quantity
+                    </label>
+                    <select
+                      id={`quantity-select-${product.id}`}
+                      className="form-select w-25 border-5 mb-2"
+                      value={isCustom ? "custom" : quantity} // Ensure the select shows the current value
+                      onChange={handleQuantityChange}
+                      aria-label="Select quantity"
                     >
-                      Add to Cart
-                    </button>
-                  )}
-                </div>
+                      {[1, 2, 3, 4, 5].map((num) => (
+                        <option key={num} value={num}>
+                          {num}
+                        </option>
+                      ))}
+                      <option value="custom">Custom</option>
+                    </select>
+
+                    {isCustom && (
+                      <input
+                        type="number"
+                        min="1"
+                        value={customQuantity}
+                        className="form-control w-25 mb-2"
+                        onChange={handleCustomQuantityChange}
+                        placeholder="Enter quantity"
+                      />
+                    )}
+                  </>
+                )}
+
+                {isInCart ? (
+                  <button
+                    className="btn btn-danger"
+                    onClick={handleRemoveFromCart}
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-success"
+                    onClick={handleAddToCart}
+                    disabled={isCustom && customQuantity < 1} // Disable if custom quantity is invalid
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             </div>
-        
+          </div>
         );
       })}
     </div>

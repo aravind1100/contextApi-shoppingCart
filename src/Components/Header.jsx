@@ -12,18 +12,14 @@ const Header = () => {
           <h1>Shopping Zone</h1>
         </div>
         <div className="col-11 text-end">
-          
-          <Link
-            to={isToggleCart ? "/" : "/cart"}
-            className="link-reset "
-          >
-           <button
-            className="btn btn-primary cartButton"
-            onClick={() => setToggleCart(!isToggleCart)}
-          >
-            {isToggleCart ? "Shop" : "My Cart"} {" "}
-            <i className="fa-solid fa-cart-shopping"></i>
-          </button>
+          <Link to={isToggleCart ? "/" : "/cart"} className="link-reset ">
+            <button
+              className="btn btn-primary cartButton"
+              onClick={() => setToggleCart(!isToggleCart)}
+            >
+              {isToggleCart ? "Shop" : "My Cart"}{" "}
+              <i className="fa-solid fa-cart-shopping"></i>
+            </button>
           </Link>
         </div>
       </div>
